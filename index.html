@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Form Validation</title>
+	</head>
+	<body>
+		<form id="form" novalidate autocomplete="off">
+			<div id="container">
+				<label for="email">E-mail Address: </label>
+				<input type="email" name="email" id="email" required />
+				<span class="error"></span>
+
+				<label for="country">Country: </label>
+				<input type="text" name="country" id="country" required minlength="3" />
+				<span class="error"></span>
+
+				<label for="zipcode">Zip Code: </label>
+				<input
+					type="text"
+					name="zipcode"
+					id="zipcode"
+					required
+					pattern="\d{1,}"
+					minlength="5"
+				/>
+				<span class="error"></span>
+
+				<label for="password">Password: </label>
+				<input
+					type="password"
+					name="password"
+					id="password"
+					required
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+				/>
+				<span class="error"></span>
+
+				<label for="confirm-password">Confirm Password: </label>
+				<input
+					type="password"
+					name="confirm-password"
+					id="confirm-password"
+					required
+					minlength="5"
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{1,}"
+				/>
+				<span class="error"></span>
+			</div>
+			<button>Submit</button>
+		</form>
+		<script src="main.js"></script>
+	</body>
+</html>
